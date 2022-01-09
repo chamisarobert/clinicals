@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Confirm Delete</title>
+    <link rel="stylesheet" href="{% static 'css/clinicals.css' %}" />
+  </head>
+  <body>
+    <h2>Do you want to delete Patient {{patient.firstName}}?</h2>
+    <form method="post">
+      <input type="submit" value="Confirm">
+      <a href="/">Cancel</a>
+      {%csrf_token%}
+
+    </form>
+
+  </body>
+</html>

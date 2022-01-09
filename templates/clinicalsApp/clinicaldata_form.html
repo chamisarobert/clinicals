@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Add Clinical Data</title>
+    <link rel="stylesheet" href="{% static 'css/clinicals.css' %}" />
+  </head>
+  <body>
+    <h2>Patient Details:</h2>
+    <table>
+      <tr>
+        <td>Patient Id:</td>
+        <td>{{patient.id}}</td>
+      </tr>
+      <tr>
+        <td>First Name:</td>
+        <td>{{patient.firstName}}</td>
+      </tr>
+      <tr>
+        <td>Last Name:</td>
+        <td>{{patient.lastName}}</td>
+      </tr>
+      <tr>
+        <td>Age:</td>
+        <td>{{patient.age}}</td>
+      </tr>
+    </table>
+    <br>
+
+    <h2>Patient Clinical Data:</h2>
+    <form method="post">
+      <table>
+        {{form.as_table}}
+        {%csrf_token%}
+      </table>
+      <input type="submit" value="Save">
+
+    </form>
+
+
+  </body>
+</html>
